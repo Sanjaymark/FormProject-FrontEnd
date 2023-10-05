@@ -7,7 +7,7 @@ export const HomePage = () =>{
         <Navigationbar/>
         <div className="h-screen bg-neutral m-1">
             <div className="dark flex justify-center items-center text-6xl hm">
-                Welcome to Sanjay's Form Web App
+                Welcome to Sanjay's Student Details Web App
                 <span>Please Login/SignUp to explore the Content</span>
             </div>
         </div>

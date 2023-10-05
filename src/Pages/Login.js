@@ -25,7 +25,7 @@ export const Login = () => {
                 
                 setTimeout(() => 
                 {
-                    Navigate("/");
+                    Navigate("/form/all");
                 }, 3000);
             }
         });

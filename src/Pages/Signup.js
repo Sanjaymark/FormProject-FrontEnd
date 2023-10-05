@@ -30,7 +30,7 @@ export const Signup = () =>{
                 
                 setTimeout(() => 
                 {
-                    Navigate("/");
+                    Navigate("/form/all");
                 }, 3000);
                 
             }
