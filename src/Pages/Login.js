@@ -56,7 +56,7 @@ export const Login = () => {
 
 function LoginForm({ name, SetName, email, SetEmail, password, SetPassword, handleSubmit }) {
     return (
-        <div className="flex justify-center items-center h-screen bg-neutral m-1">
+        <div className="flex justify-center items-center h-screen bg-info m-1">
         <div className="w-full max-w-md">
         <form className="forms" onSubmit={handleSubmit}>
             <input
@@ -80,7 +80,7 @@ function LoginForm({ name, SetName, email, SetEmail, password, SetPassword, hand
                 value={password}
                 onChange={(e) => SetPassword(e.target.value)}
             />
-            <button className="btn btn-success w-full" type="submit">
+            <button className="btn btn-neutral bg-neutral dark w-full" type="submit">
                 Login
             </button>
         </form>

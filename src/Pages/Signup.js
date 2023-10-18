@@ -63,7 +63,7 @@ export const Signup = () =>{
 function SignupForm({name,SetName,email, SetEmail,contact, SetContact,password, SetPassword, handleSubmit})
 {
     return(
-            <div className="flex justify-center items-center h-screen m-1 bg-neutral">
+            <div className="flex justify-center items-center h-screen m-1 bg-info">
                 <div className="w-full max-w-md">
                 <form className="forms" onSubmit={handleSubmit}>
                     <input
@@ -94,7 +94,7 @@ function SignupForm({name,SetName,email, SetEmail,contact, SetContact,password, 
                         value={password}
                         onChange={(e) => SetPassword(e.target.value)}
                     />
-                    <button className="btn btn-success w-full" type="submit">Signup</button>
+                    <button className="btn btn-neutral bg-neutral dark w-full" type="submit">Signup</button>
                 </form>
                 </div>
             </div>
