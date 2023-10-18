@@ -45,7 +45,7 @@ export const AddData = () => {
     return (
         <div>
             <Navigationbar2/>
-        <div className="border-2 border-neutral bg-base-200 m-1 h-screen flex justify-center items-center">
+        <div className="border-2 border-neutral bg-info m-1 h-screen flex justify-center items-center">
             <div>
                 <span className="text-4xl ">Fill the form with Your Details</span>
                 <form className="forms " onSubmit={handleSubmit}>
