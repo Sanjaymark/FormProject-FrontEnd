@@ -15,7 +15,7 @@ export const DeleteData = () => {
             setSuccessMessage(response.message);
             setErrorMessage("");
 
-            Navigate("/");
+            Navigate("/form/all");
 
         } else {
             setSuccessMessage("");

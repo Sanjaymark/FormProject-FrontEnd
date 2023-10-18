@@ -25,30 +25,42 @@ export const DataList = () => {
     };
 
     return (
-        <div className="bg-neutral m-1 h-full">
-            <div className="card-container  ">
-                {data.length > 0 ? (
-                    <div className="flex flex-wrap justify-center">
-                        {data.map(data => (
-                            <div key={data._id} className="card w-96 bg-neutral dark shadow-xl m-4 border-2">
-                                <div className="card-body items-center text-center text-lg">
-                                    <h2 className="card-title text-4xl p-2">{data.name}</h2>
+        <div className="h-full w-full m-2">
+  {data.length > 0 ? (
+    <table className="table-auto">
+      <thead>
+        <tr className="italic text-2xl bg-neutral dark">
+          <th className="border  p-2">Name</th>
+          <th className="border p-2">Email</th>
+          <th className="border  p-2">Contact</th>
+          <th className="border  p-2">Education</th>
+          <th className="border  p-2">Age</th>
+          <th className="border  p-2">Gender</th>
+          <th className="border  p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((item) => (
+          <tr key={item._id} className="italic text-lg">
+            <td className="border border-neutral p-2 w-80">{item.name}</td>
+            <td className="border border-neutral p-2 w-80">{item.email}</td>
+            <td className="border border-neutral p-2 w-64">{item.contact}</td>
+            <td className="border border-neutral p-2 w-40">{item.education}</td>
+            <td className="border border-neutral p-2 w-32">{item.age}</td>
+            <td className="border border-neutral p-2 w-40">{item.gender}</td>
+            <td className="border border-neutral p-2 w-40">
+              <Link to={`/form/${item._id}`} className="btn bg-neutral btn-info btn-outline dark">
+                View
+              </Link>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  ) : (
+    <p>{errorMessage}</p>
+  )}
+</div>
 
-                                    <p>Email : {data.email}</p>
-                                    <p>Contact : {data.contact}</p>
-                                    <p>Education : {data.education}</p>
-                                    <p>Age : {data.age}</p>
-                                    <p>Gender : {data.gender}</p>
-                                    <div className="card-actions flex justify-between p-4">
-                                    <Link to={`/form/${data._id}`} className="btn btn-success">View</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                ) : (<p>{errorMessage}</p>
-                )}
-            </div>
-        </div>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Navigationbar } from "../../Components/Navbar";
+import { Navigationbar2 } from "../../Components/Navbar";
 import { deleteData, getDataById } from "../../Services/form";
 
 export const DataDetails = () => {
@@ -29,7 +29,7 @@ export const DataDetails = () => {
         const response = await deleteData(id);
 
         if (response.success) {
-            navigate("/");
+            navigate("/form/all");
         } else {
             setErrorMessage(response.message);
         }
@@ -37,8 +37,8 @@ export const DataDetails = () => {
 
     return (
         <div>
-            <Navigationbar/>
-        <div className="bg-neutral m-1 h-full" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+            <Navigationbar2/>
+        <div className="bg-info m-1 h-full border-2 border-neutral" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
             {data ? (
                 <div className="card w-96 bg-neutral shadow-xl dark border-2">
                     <div className="card-body items-center  text-center">

@@ -1,11 +1,14 @@
 import React from "react";
-import { Navigationbar } from "../Components/Navbar";
+import { Navigationbar, Navigationbar2 } from "../Components/Navbar";
 import { DataList } from "./Product/GetAllData";
 
 
 export const Dashboard = () =>{
+
+    const token = localStorage.getItem("token");
+
     return <div>
-        <Navigationbar/>
-        <DataList/>
+      {token ? <Navigationbar2 /> : <Navigationbar />}
+      <DataList />
     </div>
 };

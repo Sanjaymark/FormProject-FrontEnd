@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateData, getDataById } from "../../Services/form";
-import { Navigationbar } from "../../Components/Navbar";
+import { Navigationbar2 } from "../../Components/Navbar";
 
 export const UpdateData = () => {
     const { id } = useParams();
@@ -46,7 +46,7 @@ export const UpdateData = () => {
             setSuccessMessage("Product updated successfully!");
             setErrorMessage("");
 
-            Navigate("/")
+            Navigate("/form/all")
 
         } else {
             setSuccessMessage("");
@@ -62,8 +62,8 @@ export const UpdateData = () => {
 
     return (
         <div>
-            <Navigationbar/>
-            <div className="bg-neutral h-screen p-1 flex justify-center m-1">
+            <Navigationbar2/>
+            <div className="bg-info h-screen p-1 flex justify-center m-1">
             <div className="w-full max-w-md">
                 <form className="forms" onSubmit={handleSubmit}>
                     <input type="text" placeholder="Name" className="input input-bordered input-accent w-full " value={name} onChange={(e) => setName(e.target.value)} />
@@ -72,7 +72,7 @@ export const UpdateData = () => {
                     <input type="text" placeholder="Education" className="input input-bordered input-accent w-full " value={education} onChange={(e) => setEducation(e.target.value)} />
                     <input type="text" placeholder="Age" className="input input-bordered input-accent w-full " value={age} onChange={(e) => setAge(e.target.value)} />
                     <input type="text" placeholder="Gender" className="input input-bordered input-accent w-full " value={gender} onChange={(e) => setGender(e.target.value)} />
-                    <button className="btn btn-active btn-accent" type="submit">Update Data</button>
+                    <button className="btn btn-neutral bg-neutral dark" type="submit">Update Data</button>
                 </form>
                 {errorMessage && <div className="error-message">{errorMessage}</div>}
                 {successMessage && <div className="success-message">{successMessage}</div>}
